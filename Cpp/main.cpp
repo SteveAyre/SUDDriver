@@ -31,7 +31,7 @@
 #include <wchar.h>
 #include <string.h>
 #include <stdlib.h>
-#include "hidapi.h"
+#include <hidapi/hidapi.h>
 #include "sud_data.h"
 #include <iostream>
 
