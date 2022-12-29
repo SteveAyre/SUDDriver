@@ -2,14 +2,11 @@
 .PHONY: all
 all: seneye
 
-seneye: main.o linux/hid.o
-	$(CXX) -Wall -o seneye main.o linux/hid.o -ludev -lncurses -lrt
+seneye: main.o
+	$(CXX) -Wall -o seneye main.o -ludev -lncurses -lhidapi-libusb
 
 main.o: main.cpp
 	$(CXX) -Wall -c -o main.o main.cpp
-
-linux/hid.o: linux/hid.c
-	$(CXX) -c -o linux/hid.o linux/hid.c
 
 .PHONY: install
 install: seneye
@@ -17,5 +14,5 @@ install: seneye
 
 .PHONY: clean
 clean:
-	rm -f seneye main.o linux/hid.o
+	rm -f seneye main.o
 
