@@ -10,7 +10,7 @@ main.o: main.cpp
 
 .PHONY: install
 install: seneye
-	install -m755 seneye $(PREFIX)/usr/local/bin
+	install -m755 seneye $(PREFIX)/usr/bin
 
 .PHONY: clean
 clean:
