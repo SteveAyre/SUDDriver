@@ -3,10 +3,10 @@
 all: seneye
 
 seneye: main.o linux/hid.o
-	$(CXX) -o seneye main.o linux/hid.o -ludev -lncurses
+	$(CXX) -Wall -o seneye main.o linux/hid.o -ludev -lncurses -lrt
 
 main.o: main.cpp
-	$(CXX) -c -o main.o main.cpp
+	$(CXX) -Wall -c -o main.o main.cpp
 
 linux/hid.o: linux/hid.c
 	$(CXX) -c -o linux/hid.o linux/hid.c
