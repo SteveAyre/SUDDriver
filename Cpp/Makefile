@@ -3,7 +3,7 @@
 all: seneye
 
 seneye: main.o
-	$(CXX) -Wall -o seneye main.o -ludev -lncurses -lhidapi-libusb
+	$(CXX) -Wall -o seneye main.o -lncurses -lhidapi-hidraw -lhidapi-libusb
 
 main.o: main.cpp
 	$(CXX) -Wall -c -o main.o main.cpp
